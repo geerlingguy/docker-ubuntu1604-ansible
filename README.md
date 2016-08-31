@@ -8,7 +8,7 @@ Ubuntu 16.04 LTS (Xenial) Docker container for Ansible playbook and role testing
 
 TODO
 
-## Author
+## Notes
 
 I use Docker to test my Ansible roles and playbooks on multiple OSes using CI tools like Jenkins and Travis. This container allows me to test roles and playbooks using Ansible running locally inside the container.
 
