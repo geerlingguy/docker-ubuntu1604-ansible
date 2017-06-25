@@ -1,5 +1,5 @@
 FROM ubuntu:16.04
-MAINTAINER Jeff Geerling
+LABEL maintainer="Jeff Geerling"
 
 # Install dependencies.
 RUN apt-get update \
