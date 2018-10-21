@@ -1,14 +1,16 @@
 FROM ubuntu:16.04
 LABEL maintainer="Jeff Geerling"
 
-ENV pip_packages "ansible pyopenssl"
+ENV pip_packages "ansible pyopenssl yamllint ansible-lint flake8 testinfra molecule"
 
 # Install dependencies.
 RUN apt-get update \
     && apt-get install -y --no-install-recommends \
+       build-essential \
        python-software-properties \
        software-properties-common \
        python-setuptools \
+       python-dev \
        python-pip \
        rsyslog systemd systemd-cron sudo \
     && rm -Rf /var/lib/apt/lists/* \
