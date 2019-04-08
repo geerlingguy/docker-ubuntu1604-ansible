@@ -1,7 +1,7 @@
 FROM ubuntu:16.04
 LABEL maintainer="Jeff Geerling"
 
-ENV pip_packages "ansible pyopenssl yamllint ansible-lint flake8 testinfra molecule"
+ENV pip_packages "ansible docker pyopenssl yamllint ansible-lint flake8 testinfra molecule"
 
 # Install dependencies.
 RUN apt-get update \
