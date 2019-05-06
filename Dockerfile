@@ -9,11 +9,12 @@ RUN apt-get update \
        python-software-properties \
        software-properties-common \
        python-setuptools \
-       python-pip \
-       rsyslog systemd systemd-cron sudo \
+       wget rsyslog systemd systemd-cron sudo \
     && rm -Rf /var/lib/apt/lists/* \
     && rm -Rf /usr/share/doc && rm -Rf /usr/share/man \
-    && apt-get clean
+    && apt-get clean \
+    && wget https://bootstrap.pypa.io/get-pip.py \
+    && python get-pip.py
 RUN sed -i 's/^\($ModLoad imklog\)/#\1/' /etc/rsyslog.conf
 
 # Install Ansible via Pip.
