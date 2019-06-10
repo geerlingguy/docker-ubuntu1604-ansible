@@ -12,7 +12,7 @@ RUN apt-get update \
        software-properties-common \
        python-setuptools \
        python-dev \
-       rsyslog systemd systemd-cron sudo \
+       wget rsyslog systemd systemd-cron sudo iproute2 \
     && rm -Rf /var/lib/apt/lists/* \
     && rm -Rf /usr/share/doc && rm -Rf /usr/share/man \
     && apt-get clean \
