@@ -7,7 +7,6 @@ ENV pip_packages "ansible pyopenssl yamllint ansible-lint flake8 testinfra molec
 RUN apt-get update \
     && apt-get install -y --no-install-recommends \
        build-essential \
-       wget \
        python-software-properties \
        software-properties-common \
        python-setuptools \
