@@ -6,6 +6,7 @@ ENV pip_packages "ansible pyopenssl"
 # Install dependencies.
 RUN apt-get update \
     && apt-get install -y --no-install-recommends \
+       locales \
        python-software-properties \
        software-properties-common \
        python-setuptools \
@@ -16,6 +17,9 @@ RUN apt-get update \
     && wget https://bootstrap.pypa.io/get-pip.py \
     && python get-pip.py
 RUN sed -i 's/^\($ModLoad imklog\)/#\1/' /etc/rsyslog.conf
+
+# Fix potential UTF-8 errors with ansible-test.
+RUN locale-gen en_US.UTF-8
 
 # Install Ansible via Pip.
 RUN pip install $pip_packages
