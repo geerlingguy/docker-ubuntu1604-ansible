@@ -3,6 +3,10 @@ LABEL maintainer="Jeff Geerling"
 
 ENV pip_packages "ansible pyopenssl"
 
+# Fix 'ordinal not in range' error.
+ENV LC_CTYPE en_US.UTF-8
+ENV LANG en_US.UTF-8
+
 # Install dependencies.
 RUN apt-get update \
     && apt-get install -y --no-install-recommends \
