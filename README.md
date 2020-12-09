@@ -1,6 +1,6 @@
 # Ubuntu 16.04 LTS (Xenial) Ansible Test Image
 
-[![Build Status](https://travis-ci.org/geerlingguy/docker-ubuntu1604-ansible.svg?branch=master)](https://travis-ci.org/geerlingguy/docker-ubuntu1604-ansible) [![Docker Automated build](https://img.shields.io/docker/automated/geerlingguy/docker-ubuntu1604-ansible.svg?maxAge=2592000)](https://hub.docker.com/r/geerlingguy/docker-ubuntu1604-ansible/)
+[![CI](https://github.com/geerlingguy/docker-ubuntu1604-ansible/workflows/Build/badge.svg?branch=master&event=push)](https://github.com/geerlingguy/docker-ubuntu1604-ansible/actions?query=workflow%3ABuild) [![Docker pulls](https://img.shields.io/docker/pulls/geerlingguy/docker-ubuntu1604-ansible)](https://hub.docker.com/r/geerlingguy/docker-ubuntu1604-ansible/)
 
 Ubuntu 16.04 LTS (Xenial) Docker container for Ansible playbook and role testing.
 
