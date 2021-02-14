@@ -18,7 +18,7 @@ RUN apt-get update \
     && rm -Rf /var/lib/apt/lists/* \
     && rm -Rf /usr/share/doc && rm -Rf /usr/share/man \
     && apt-get clean \
-    && wget https://bootstrap.pypa.io/get-pip.py \
+    && wget https://bootstrap.pypa.io/2.7/get-pip.py \
     && python get-pip.py
 RUN sed -i 's/^\($ModLoad imklog\)/#\1/' /etc/rsyslog.conf
 
