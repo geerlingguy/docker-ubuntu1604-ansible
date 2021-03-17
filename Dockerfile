@@ -35,5 +35,18 @@ RUN chmod +x initctl_faker && rm -fr /sbin/initctl && ln -s /initctl_faker /sbin
 RUN mkdir -p /etc/ansible
 RUN echo "[local]\nlocalhost ansible_connection=local" > /etc/ansible/hosts
 
+# Disable getty services, which otherwise will consume 100% CPU
+# There are two simple solutions to this:
+#
+# RUN cp /bin/true /sbin/agetty
+#
+# or:
+RUN ln -s /dev/null /etc/systemd/system/getty@tty1.service \
+    && ln -s /dev/null /etc/systemd/system/getty@tty2.service \
+    && ln -s /dev/null /etc/systemd/system/getty@tty3.service \
+    && ln -s /dev/null /etc/systemd/system/getty@tty4.service \
+    && ln -s /dev/null /etc/systemd/system/getty@tty5.service \
+    && ln -s /dev/null /etc/systemd/system/getty@tty6.service
+
 VOLUME ["/sys/fs/cgroup", "/tmp", "/run"]
 CMD ["/lib/systemd/systemd"]
